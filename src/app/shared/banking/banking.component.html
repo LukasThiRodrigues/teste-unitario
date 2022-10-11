@@ -1,0 +1,19 @@
+<p>
+    <strong>Olá jabileison</strong>
+    <br>
+    Ag: 34987, CO: 563456-9
+</p>
+
+<p>
+    Poupança: R$ {{getPoupanca}}
+    <br>
+    <input type="text" #sacar>
+    <button (click)="setSacar(sacar.value)"> Sacar </button>
+</p>
+
+<p>
+    Carteira: R$ {{getCarteira}}
+    <br>
+    <input type="text" #depositar>
+    <button (click)="setDepositar(depositar.value)"> depositar </button>
+</p>
