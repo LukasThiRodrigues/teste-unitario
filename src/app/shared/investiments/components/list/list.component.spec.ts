@@ -1,5 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 import { Investiments } from '../../model/investiments';
 import { MOCK_LIST } from '../../services/list-investiments.mock';
 import { ListInvestimentsService } from '../../services/list-investiments.service';
@@ -32,7 +33,8 @@ describe('ListComponent', () => {
   });
 
   it('(U) should list investiments', () => {
-    spyOn(service, 'list').and.returnValue(mockList);
+    let investiments = component.investiments;
+    spyOn(service, 'list').and.returnValue(of(mockList));
 
     component.ngOnInit();
     fixture.detectChanges();
@@ -44,7 +46,7 @@ describe('ListComponent', () => {
   });
 
   it('(I) should list investiments', () => {
-    spyOn(service,'list').and.returnValue(mockList);
+    spyOn(service,'list').and.returnValue(of(mockList));
 
     component.ngOnInit();
     fixture.detectChanges();
